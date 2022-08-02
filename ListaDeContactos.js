@@ -1,24 +1,44 @@
-/* Lista de Contactos -1 */
+/*Ajusta las funciones de crear y eliminar un contacto para que 
+puedan almacenar la siguiente información como objetos: 
+id, nombres, apellidos, teléfono, ubicaciones (ciudad y dirección)*/
 
-let listaContactos = ["Luis Perez", "Andrés Antelo", "Juan Suarez"];
+let listaContactos = [];
 
-/* Función para Agregar un Contacto */
-function agregarContacto(contactoNuevo) {
-  listaContactos.push(contactoNuevo);
+const contacto1 = {
+  id: 1,
+  nombre: "Pedro",
+  apellido: "Díaz",
+  telefono: 5555666,
+  ubicación: {
+    ciudad: "Santa Cruz",
+    direccion: "Calle Libertad 235",
+  },
+};
+
+const contacto2 = {
+  id: 2,
+  nombre: "Roberto",
+  apellido: "Parada",
+  telefono: 444888,
+  ubicación: {
+    ciudad: "Cochabamba",
+    direccion: "Calle Aroma 875",
+  },
+};
+
+/* Función Crear Contacto */
+function agregarContacto(contacto) {
+  listaContactos.push(contacto);
 }
-agregarContacto("Pepito");
+
+agregarContacto(contacto1);
+agregarContacto(contacto2);
 console.log(listaContactos);
 
-/* Función para Borrar el último Conctacto */
-function borrarContacto() {
-  listaContactos.pop();
+/* Función Eliminar Contacto */
+function eliminarContacto(idContacto) {
+  listaContactos = listaContactos.filter((lista) => lista.id !== idContacto);
 }
-borrarContacto();
-console.log(listaContactos);
 
-/* Función para Mostrar la lista numerada de Contactos */
-function mostrarContactos() {
-  for (let i = 0; i < listaContactos.length; i++)
-    console.log(i + 1 + ") " + listaContactos[i]);
-}
-mostrarContactos();
+eliminarContacto(2);
+console.log(listaContactos);
