@@ -42,3 +42,16 @@ function eliminarContacto(idContacto) {
 
 eliminarContacto(2);
 console.log(listaContactos);
+
+/* Función Actualizar Teléfono de un Contacto */
+
+function actualizarTelefono(lista, id, telefono) {
+  for (let i = 0; i <= lista.length; i++) {
+    if (lista.id[i] == id) {
+      lista.telefono[i] = telefono;
+    }
+  }
+}
+
+actualizarTelefono(listaContactos, 1, 999111);
+console.log(listaContactos);
