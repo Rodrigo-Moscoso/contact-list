@@ -43,12 +43,12 @@ function eliminarContacto(idContacto) {
 eliminarContacto(2);
 console.log(listaContactos);
 
-/* Función Actualizar Teléfono de un Contacto */
+/* Función Actualizar Teléfono de un Contacto, indicando el "id"*/
 
 function actualizarTelefono(lista, id, telefono) {
-  for (let i = 0; i <= lista.length; i++) {
-    if (lista.id[i] == id) {
-      lista.telefono[i] = telefono;
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i].id == id) {
+      lista[i].telefono = telefono;
     }
   }
 }
